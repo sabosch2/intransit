@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — In Transit</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">In Transit</a>
+      <ul class="nav-links">
+        <li><a href="../about.html">About</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../stephen/index.html">Stephen</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="container">
+      <span class="section-label">Blog</span>
+      <h1 class="hero-headline">
+        Stories from<br />the <em>road</em>.
+      </h1>
+      <p class="hero-sub">
+        Everything we've written — places visited, things learned,
+        and moments worth remembering.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ALL POSTS
+       Add a new post-card here every time you publish a post.
+       Most recent at the top.
+  -->
+  <section class="section">
+    <div class="container">
+
+      <div class="post-grid">
+
+        <article class="post-card">
+          <div class="post-meta">
+            <time datetime="2025-06-01">1 Jun 2025</time>
+            <span class="post-tag">On the road</span>
+          </div>
+          <h3 class="post-title">
+            <a href="post-1.html">Your first travel post title</a>
+          </h3>
+          <p class="post-excerpt">
+            A short description of the post. Where you went, what happened,
+            what you saw. Two or three sentences.
+          </p>
+          <p class="post-author">By Stephen Bosch</p>
+          <a href="post-1.html" class="read-more">Read more →</a>
+        </article>
+
+        <article class="post-card">
+          <div class="post-meta">
+            <time datetime="2025-05-20">20 May 2025</time>
+            <span class="post-tag">Van life</span>
+          </div>
+          <h3 class="post-title">
+            <a href="post-2.html">Another post title goes here</a>
+          </h3>
+          <p class="post-excerpt">
+            Another excerpt. Replace these cards with real posts
+            as you write them.
+          </p>
+          <p class="post-author">By Liz Barranco</p>
+          <a href="post-2.html" class="read-more">Read more →</a>
+        </article>
+
+        <article class="post-card">
+          <div class="post-meta">
+            <time datetime="2025-05-05">5 May 2025</time>
+            <span class="post-tag">Reflections</span>
+          </div>
+          <h3 class="post-title">
+            <a href="post-3.html">A third post title goes here</a>
+          </h3>
+          <p class="post-excerpt">
+            Each card links to its own full post page.
+            Duplicate post-1.html to create new posts.
+          </p>
+          <p class="post-author">By Stephen Bosch</p>
+          <a href="post-3.html" class="read-more">Read more →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> Stephen Bosch &amp; Liz Barranco</p>
+        <nav class="footer-links">
+          <a href="../about.html">About</a>
+          <a href="index.html">Blog</a>
+          <a href="../stephen/index.html">Stephen</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

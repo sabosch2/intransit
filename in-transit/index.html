@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>In Transit</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <!--
+        Logo placeholder. When you have a logo file, replace the text with:
+        <img src="assets/logo.svg" alt="In Transit" height="32" />
+      -->
+      <a href="index.html" class="nav-logo">In Transit</a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="stephen/index.html">Stephen</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-headline">
+        Life is better<br />
+        <em>in transit</em>.
+      </h1>
+      <p class="hero-sub">
+        A travel blog and personal space for Stephen Bosch &amp; Liz Barranco.
+        We're building a van and seeing where it takes us.
+      </p>
+      <!--
+        Edit the headline and subheading above to describe yourselves
+        and what this site is about in your own words.
+      -->
+      <div class="hero-actions">
+        <a href="blog/index.html" class="btn btn-primary">Read the blog</a>
+        <a href="about.html" class="btn btn-ghost">About us</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- RECENT POSTS
+       These are pulled manually for now — just copy a post-card block
+       each time you publish a new post and keep the three most recent here.
+  -->
+  <section class="section section--tinted">
+    <div class="container">
+      <span class="section-label">Latest</span>
+      <h2 class="section-title">Recent posts</h2>
+
+      <div class="post-grid">
+
+        <!-- POST CARD — duplicate and update for each new post -->
+        <article class="post-card">
+          <div class="post-meta">
+            <time datetime="2025-06-01">1 Jun 2025</time>
+            <span class="post-tag">On the road</span>
+          </div>
+          <h3 class="post-title">
+            <a href="blog/post-1.html">Your first travel post title</a>
+          </h3>
+          <p class="post-excerpt">
+            A short description of the post — where you went, what happened,
+            what you saw. Two or three sentences is enough.
+          </p>
+          <!-- Credit which author wrote this post -->
+          <p class="post-author">By Stephen Bosch</p>
+          <a href="blog/post-1.html" class="read-more">Read more →</a>
+        </article>
+
+        <article class="post-card">
+          <div class="post-meta">
+            <time datetime="2025-05-20">20 May 2025</time>
+            <span class="post-tag">Van life</span>
+          </div>
+          <h3 class="post-title">
+            <a href="blog/post-2.html">Another post title goes here</a>
+          </h3>
+          <p class="post-excerpt">
+            Another excerpt. You'll replace these placeholder cards with
+            real posts as you write them.
+          </p>
+          <p class="post-author">By Liz Barranco</p>
+          <a href="blog/post-2.html" class="read-more">Read more →</a>
+        </article>
+
+        <article class="post-card">
+          <div class="post-meta">
+            <time datetime="2025-05-05">5 May 2025</time>
+            <span class="post-tag">Reflections</span>
+          </div>
+          <h3 class="post-title">
+            <a href="blog/post-3.html">A third post title goes here</a>
+          </h3>
+          <p class="post-excerpt">
+            Keep the three most recent posts on this home page,
+            and link to the full blog for the rest.
+          </p>
+          <p class="post-author">By Stephen Bosch</p>
+          <a href="blog/post-3.html" class="read-more">Read more →</a>
+        </article>
+
+      </div>
+
+      <div style="margin-top: 2.5rem;">
+        <a href="blog/index.html" class="btn btn-ghost">All posts →</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> Stephen Bosch &amp; Liz Barranco</p>
+        <nav class="footer-links">
+          <a href="about.html">About</a>
+          <a href="blog/index.html">Blog</a>
+          <a href="stephen/index.html">Stephen</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
