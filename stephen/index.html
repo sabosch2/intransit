@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stephen Bosch — In Transit</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* Project cards — only needed on this page */
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: var(--space-md); }
+    .project-card { border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden; transition: border-color var(--transition), box-shadow var(--transition); }
+    .project-card:hover { border-color: var(--color-accent); box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
+    .project-img--placeholder { height: 180px; background-color: var(--color-bg-tinted); display: flex; align-items: center; justify-content: center; color: var(--color-text-muted); font-size: 0.85rem; border-bottom: 1px solid var(--color-border); }
+    .project-img img { width: 100%; height: 180px; object-fit: cover; }
+    .project-info { padding: var(--space-md); }
+    .project-tags { display: flex; gap: var(--space-xs); margin-bottom: var(--space-sm); flex-wrap: wrap; }
+    .tag { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-muted); border: 1px solid var(--color-border); padding: 2px 8px; border-radius: 20px; }
+    .project-info h3 { margin-bottom: var(--space-xs); }
+    .project-info p { font-size: 0.9rem; color: var(--color-text-muted); max-width: none; margin-top: var(--space-xs); }
+    .project-links { display: flex; gap: var(--space-xs); margin-top: var(--space-md); }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">In Transit</a>
+      <ul class="nav-links">
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="index.html" class="active">Stephen</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="section-label">Stephen Bosch</span>
+      <h1 class="hero-headline">
+        Building things,<br /><em>writing things</em>.
+      </h1>
+      <p class="hero-sub">
+        My personal corner of In Transit — projects, writing, and
+        whatever else I'm working on.
+      </p>
+      <!--
+        Customise this to describe yourself and what you personally
+        bring to the site.
+      -->
+    </div>
+  </section>
+
+
+  <!-- ABOUT STEPHEN -->
+  <section id="about" class="section">
+    <div class="container container--narrow">
+      <span class="section-label">About</span>
+      <div style="display: grid; grid-template-columns: 1fr 240px; gap: 3rem; align-items: start; margin-top: 1rem;">
+        <div>
+          <h2>Hi, I'm <span class="text-accent">Stephen</span>.</h2>
+          <p>
+            Write your personal bio here. This is separate from the shared
+            About Us page — this one is just about you, your background,
+            your interests, and what you do.
+          </p>
+          <p>
+            A second paragraph could cover things you're currently working on,
+            learning, or excited about.
+          </p>
+          <a href="../contact.html" class="btn btn-ghost" style="margin-top: 1.5rem; display: inline-block;">
+            Get in touch →
+          </a>
+        </div>
+        <div class="person-photo">
+          <!--
+            Add your photo:
+            <img src="../assets/stephen.jpg" alt="Stephen Bosch" />
+          -->
+          <span>Photo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROJECTS -->
+  <section class="section section--tinted">
+    <div class="container">
+      <span class="section-label">Projects</span>
+      <h2 class="section-title">Things I've worked on</h2>
+
+      <div class="project-grid">
+
+        <div class="project-card">
+          <div class="project-img--placeholder"><span>Image</span></div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="tag">Van build</span>
+            </div>
+            <h3>Ford Transit conversion</h3>
+            <p>
+              Building out a Ford Transit extended high-roof van with a full
+              electrical system, insulation, and living space for life on the road.
+            </p>
+            <div class="project-links">
+              <a href="../blog/index.html" class="btn btn-ghost btn--small">Read about it →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img--placeholder"><span>Image</span></div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="tag">Project</span>
+            </div>
+            <h3>Your second project</h3>
+            <p>
+              Describe another project here. Could be technical, creative,
+              athletic — anything you've made or done that's worth documenting.
+            </p>
+            <div class="project-links">
+              <a href="#" class="btn btn-ghost btn--small">View →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> Stephen Bosch &amp; Liz Barranco</p>
+        <nav class="footer-links">
+          <a href="../about.html">About</a>
+          <a href="../blog/index.html">Blog</a>
+          <a href="index.html">Stephen</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
