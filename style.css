@@ -1,6 +1,6 @@
 /*
   ===================================================
-  IN TRANSIT — style.css
+  IN TRANSIT - style.css
   Shared styles across all pages
   ===================================================
 
@@ -164,7 +164,7 @@ em { font-style: italic; }
   height: 64px;
 }
 
-/* Site logo / name — styled as wordmark until a real logo is added */
+/* Site logo / name - styled as wordmark until a real logo is added */
 .nav-logo {
   font-family: var(--font-display);
   font-size: 1.3rem;
