@@ -29,7 +29,7 @@
   --color-bg-tinted:  #f3f2ee;
   --color-text:       #1a1a18;
   --color-text-muted: #6b6b62;
-  --color-accent:     #2d6a4f;
+  --color-accent:     #356899;
   --color-border:     #e5e4df;
 
   --font-display: 'DM Serif Display', Georgia, serif;
@@ -243,8 +243,8 @@ em { font-style: italic; }
 }
 
 .btn-primary:hover {
-  background-color: #235a40;
-  border-color: #235a40;
+  background-color: #2a5478;
+  border-color: #2a5478;
 }
 
 .btn-ghost {
@@ -336,7 +336,7 @@ em { font-style: italic; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-accent);
-  background-color: rgba(45, 106, 79, 0.08);
+  background-color: rgba(53, 104, 153, 0.08);
   padding: 2px 8px;
   border-radius: 20px;
 }
