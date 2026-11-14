@@ -499,7 +499,7 @@ em { font-style: italic; }
 }
 
 @media (max-width: 480px) {
-  .nav-links { display: none; }
+  .nav-links { gap: var(--space-sm); font-size: 0.9rem; }
   .hero { padding-block: var(--space-xl); }
 }
 
@@ -632,4 +632,68 @@ em { font-style: italic; }
 
 @media (hover: none) {
   .gallery-btn { display: none; }
+}
+
+
+/* ===================================================
+  14. POST LISTS (home and blog pages)
+=================================================== */
+.page-head {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-md);
+}
+
+.page-head h1 { font-size: clamp(2rem, 4vw, 2.75rem); }
+
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg) var(--space-md);
+}
+
+.post-list .post-card { padding: 0; overflow: hidden; }
+
+.post-card-image {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-bg-tinted);
+}
+
+.post-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.post-card:hover .post-card-image img { transform: scale(1.03); }
+
+.post-card-body {
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* The newest post spans the full width, photo beside the text. */
+@media (min-width: 769px) {
+  .post-list .post-card:first-child {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
+  .post-list .post-card:first-child .post-card-image { flex: 0 0 58%; }
+  .post-list .post-card:first-child .post-card-body {
+    justify-content: center;
+    padding: var(--space-lg);
+  }
+  .post-list .post-card:first-child .post-title { font-size: 1.75rem; }
+  .post-list .post-card:first-child .post-excerpt { flex-grow: 0; font-size: 1rem; }
+}
+
+.contact-email {
+  font-size: 1.15rem;
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
