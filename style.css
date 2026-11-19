@@ -521,7 +521,6 @@ em { font-style: italic; }
 }
 
 .gallery--tall { aspect-ratio: 4 / 5; }
-.gallery--tall .gallery-slide img { object-fit: contain; }
 
 .gallery-track {
   display: flex;
@@ -562,6 +561,9 @@ em { font-style: italic; }
   margin: 0;
   border-radius: 0;
 }
+
+.post-content .gallery--tall .gallery-slide img,
+.gallery--tall .gallery-slide img { object-fit: contain; }
 
 .gallery-slide figcaption {
   position: absolute;
@@ -750,6 +752,18 @@ em { font-style: italic; }
 }
 .trip-marker--post span { width: 18px; height: 18px; }
 
+.legend-dot--stay,
+.trip-marker--stay span {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #9a978e;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+.trip-marker--stay span { width: 12px; height: 12px; }
+.trip-marker--stay { cursor: default; }
+
 .trip-marker { background: none; border: none; }
 .trip-marker--start svg { filter: drop-shadow(0 1px 3px rgba(0,0,0,0.35)); }
 
@@ -776,3 +790,4 @@ em { font-style: italic; }
 .trip-popup-meta { display: block; font-size: 0.72rem; color: var(--color-text-muted); }
 .trip-popup-title { display: block; font-family: var(--font-display); font-size: 1.15rem; margin: 0.15rem 0 0.35rem; }
 .trip-popup-link { display: block; font-size: 0.8rem; font-weight: 500; color: var(--color-accent); }
+

@@ -1,14 +1,16 @@
 /*
   map.js - the interactive trip map on map.html.
   Stops come from map-data.js; the route is drawn through them in order.
+  Clicking a pin opens a card for that post.
 */
-(function () {
+function initTripMap(elementId, options) {
+  options = options || {};
   var stops = window.TRIP_STOPS || [];
   var accent = '#d2691e';
 
-  var map = L.map('trip-map', {
+  var map = L.map(elementId, {
     zoomControl: true,
-    scrollWheelZoom: true,
+    scrollWheelZoom: options.scrollWheelZoom !== false,
     worldCopyJump: false
   });
 
@@ -26,6 +28,11 @@
   if (window.US_STATE_BORDERS) {
     L.polyline(window.US_STATE_BORDERS, {
       color: '#a8a59b', weight: 1, opacity: 0.9, interactive: false
+    }).addTo(map);
+  }
+  if (window.US_OUTLINE) {
+    L.polyline(window.US_OUTLINE, {
+      color: '#8f8c83', weight: 1.2, opacity: 0.9, interactive: false
     }).addTo(map);
   }
   L.tileLayer(esri + 'World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
@@ -50,6 +57,14 @@
     popupAnchor: [0, -8]
   });
 
+  // A place we stayed: grey, no card. Hover shows its name.
+  var stayIcon = L.divIcon({
+    className: 'trip-marker trip-marker--stay',
+    html: '<span></span>',
+    iconSize: [12, 12],
+    iconAnchor: [6, 6]
+  });
+
   function esc(s) {
     return String(s).replace(/[&<>"]/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
@@ -60,6 +75,16 @@
   stops.forEach(function (s, i) {
     var ll = [s.lat, s.lng];
     points.push(ll);
+
+    if (s.stay) {
+      L.marker(ll, { icon: stayIcon, keyboard: false, zIndexOffset: -100 })
+        .addTo(map)
+        .bindTooltip(esc(s.place) + (s.date ? ' · ' + esc(s.date) : ''), {
+          direction: 'top', offset: [0, -6], className: 'trip-label'
+        });
+      return;
+    }
+
     var html =
       '<a class="trip-popup" href="' + esc(s.url) + '">' +
         (s.cover ? '<img src="' + esc(s.cover) + '" alt="" />' : '') +
@@ -76,6 +101,10 @@
       zIndexOffset: s.start ? 1000 : i
     }).addTo(map).bindPopup(html, { maxWidth: 260, minWidth: 220 });
 
+    if (options.onSelect) {
+      marker.on('click', function () { options.onSelect(s); });
+    }
+
     if (s.start) {
       marker.bindTooltip('Start · ' + s.place, {
         permanent: true, direction: 'right', offset: [16, 0], className: 'trip-label'
@@ -87,10 +116,19 @@
     L.polyline(points, { color: accent, weight: 3, opacity: 0.85, dashArray: '1 7', lineCap: 'round' }).addTo(map);
   }
 
-  // Show the whole country, widening if the trip ever goes beyond it.
-  var bounds = L.latLngBounds([[24.5, -125], [49.5, -66.5]]);
-  points.forEach(function (p) { bounds.extend(p); });
-  map.fitBounds(bounds, { padding: [20, 20] });
+  // Frame every stop. Close-together stops stay at a regional zoom so the
+  // pins don't overlap; the view widens on its own as the route grows.
+  if (points.length) {
+    map.fitBounds(L.latLngBounds(points), { padding: [60, 60], maxZoom: 6 });
+  } else {
+    map.fitBounds([[24.5, -125], [49.5, -66.5]]);
+  }
 
   window.addEventListener('resize', function () { map.invalidateSize(); });
-})();
+  return map;
+}
+
+// The full-screen Map page.
+if (document.getElementById('trip-map')) {
+  initTripMap('trip-map');
+}
